@@ -1,0 +1,68 @@
+Versiones: {'numpy': '2.5.4', 'scipy': '1.18.1', 'pandas': '3.1.1'}
+
+===== 2023 =====
+             A      B     C     D     E  Total
+MUN_SLEP  2805  11779  7573  3646  1963  27766
+PS_AD     2207   7470  4245  2037  1189  17148
+JARDINES   191    668   572   501   429   2361
+tres: chi2=745.7 gl=8 p=1.0e-155 V=0.089 esperada mínima=179; p con efecto de diseño 3=3.5e-49
+escolar: chi2=115.0 gl=4 p=6.3e-24 V=0.051 esperada mínima=1203; p con efecto de diseño 3=9.6e-08
+Residuos ajustados
+             A     B    C     D     E
+MUN_SLEP -7.5   1.5  6.3   0.4  -5.0
+PS_AD     9.8   4.8 -5.4  -5.8  -4.0
+JARDINES -4.6 -14.0 -2.2  12.0  20.0
+Residuos ajustados, tabla escolar
+             A    B    C    D    E
+MUN_SLEP -9.1 -2.4  5.9  3.9  0.5
+PS_AD     9.1  2.4 -5.9 -3.9 -0.5
+A/B por grupo (%): [52.5 56.4 36.4]  A/B/C por grupo (%): [79.8 81.2 60.6]
+A/B PS_AD-MUN_SLEP: 3.9 pp (IC95 3.0 a 4.9)
+A/B PS_AD-JARDINES: 20.0 pp (IC95 18.0 a 22.1)
+A/B MUN_SLEP-JARDINES: 16.1 pp (IC95 14.1 a 18.2)
+A/B/C PS_AD-MUN_SLEP: 1.4 pp (IC95 0.6 a 2.1)
+A/B/C PS_AD-JARDINES: 20.6 pp (IC95 18.5 a 22.6)
+A/B/C MUN_SLEP-JARDINES: 19.2 pp (IC95 17.2 a 21.2)
+D/E por grupo (%): [20.2 18.8 39.4]  Categoría mediana por grupo: ['B', 'B', 'C']
+
+===== 2024 =====
+            A     B     C     D    E  Total
+MUN_SLEP  426  4361  3191  1808  851  10637
+PS_AD     874  6246  3373  1499  625  12617
+JARDINES  130   632   422   276  162   1622
+tres: chi2=458.0 gl=8 p=7.0e-94 V=0.096 esperada mínima=93; p con efecto de diseño 3=5.4e-29
+escolar: chi2=392.2 gl=4 p=1.4e-83 V=0.130 esperada mínima=595; p con efecto de diseño 3=2.7e-27
+Residuos ajustados
+              A     B    C     D     E
+MUN_SLEP -10.2 -11.5  5.8  10.1   7.8
+PS_AD      8.1  13.9 -4.8 -11.5 -10.5
+JARDINES   4.1  -5.2 -1.9   3.1   5.7
+Residuos ajustados, tabla escolar
+             A     B    C     D    E
+MUN_SLEP -9.7 -13.0  5.5  11.1  9.5
+PS_AD     9.7  13.0 -5.5 -11.1 -9.5
+A/B por grupo (%): [45.  56.4 47. ]  A/B/C por grupo (%): [75.  83.2 73. ]
+A/B PS_AD-MUN_SLEP: 11.4 pp (IC95 10.1 a 12.7)
+A/B PS_AD-JARDINES: 9.5 pp (IC95 6.9 a 12.0)
+A/B MUN_SLEP-JARDINES: -2.0 pp (IC95 -4.6 a 0.6)
+A/B/C PS_AD-MUN_SLEP: 8.2 pp (IC95 7.1 a 9.2)
+A/B/C PS_AD-JARDINES: 10.2 pp (IC95 7.9 a 12.4)
+A/B/C MUN_SLEP-JARDINES: 2.0 pp (IC95 -0.3 a 4.3)
+D/E por grupo (%): [25.  16.8 27. ]  Categoría mediana por grupo: ['C', 'B', 'C']
+
+Cambio de A/B por grupo, 2024 menos 2023 (pp): [-7.52  0.   10.6 ]
+
+Cambio de la diferencia A/B escolar: 7.52 pp (IC95 5.93 a 9.11), p=2.2e-20
+Efecto de diseño 3, intervalos A/B escolar (pp): 2023 (2.3, 5.5) | 2024 (9.2, 13.6) | aumento (4.8, 10.3)
+A/B nacional de 2024 con las proporciones por grupo de 2023 (%): 53.5
+Redondeo 2023: V tres 0.082-0.096; V escolar 0.038-0.070; p máx 1.4e-13; dif A/B simulada 3.11-5.77; cotas exactas 3.00-6.00
+Redondeo 2024: V tres 0.087-0.112; V escolar 0.114-0.154; p máx 5.6e-64; dif A/B simulada 10.16-13.05; cotas exactas 10.00-13.50
+Incremento A/B, cotas por redondeo: 4.00 a 10.50 pp
+Cambio A/B por grupo 2024 menos 2023, cotas por redondeo (pp): {'MUN_SLEP': (-9.0, -5.5), 'PS_AD': (-1.5, 1.5)}
+Clasificación alternativa 2024: {'V_tres': 0.096, 'V_escolar': 0.13, 'dif_AB': np.float64(11.432)}
+Distribución nacional derivada (%): {'2023': [11.01, 42.13, 26.21, 13.08, 7.57], '2024': [5.75, 45.18, 28.08, 14.4, 6.58]}
+
+Homogeneidad entre años (escolar): G2=149.0 gl=4 p=3.3e-31
+Odds acumulados 2023: [1.31, 1.17, 1.09, 1.02]
+Odds acumulados 2024: [1.78, 1.58, 1.65, 1.67]
+Efecto de diseño crítico: chi2 escolar 2023 12.1 | aumento A/B 22.3
