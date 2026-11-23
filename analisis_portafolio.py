@@ -7,7 +7,9 @@ correspondan a los mismos grupos; son estimaciones, no conteos publicados.
 Requiere: numpy, scipy, pandas.  Uso: python analisis_portafolio.py
 Escribe en pantalla los resultados principales y guarda el detalle en resultados.json.
 """
+import csv
 import json
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import scipy
@@ -84,6 +86,17 @@ def cotas_dif_AB(y):
 
 rng = np.random.default_rng(2026)
 T = {y: derivar_frecuencias(P[y], N[y]) for y in (2023, 2024)}
+Path('datos').mkdir(exist_ok=True)
+for y in (2023, 2024):
+    with open(f'datos/portafolio_{y}.csv', 'w', encoding='utf-8', newline='') as archivo:
+        writer = csv.writer(archivo, lineterminator='\n')
+        writer.writerow(['anio', 'grupo', 'categoria', 'n_grupo_publicado',
+                         'porcentaje_publicado', 'frecuencia_estimada',
+                         'pagina_pdf_tabla2', 'folio_tabla2', 'pagina_pdf_grafico10', 'folio_grafico10'])
+        for g, grupo in enumerate(G):
+            for c, categoria in enumerate(CAT):
+                paginas = (12, 11, 14, 13) if y == 2023 else (13, 13, 15, 15)
+                writer.writerow([y, grupo, categoria, N[y][g], P[y][g][c], int(T[y][g, c]), *paginas])
 OUT['frecuencias'] = {str(y): T[y].tolist() for y in T}
 OUT['nacional_derivada'] = {str(y): (T[y].sum(0) / T[y].sum() * 100).tolist() for y in T}
 OUT['region'] = {r: dict(n23=a, p23=100 * a / 47275, n24=b, p24=100 * b / 24876) for r, (a, b) in REG.items()}
